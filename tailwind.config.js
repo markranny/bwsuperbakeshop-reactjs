@@ -15,7 +15,7 @@ export default {
           500: '#2c5282',
           600: '#2a4365',
           700: '#1a3a5f',
-          800: '#0f2b4a', // Primary color
+          800: '#1900af', // Primary color
           900: '#0a1f33',
         },
       },

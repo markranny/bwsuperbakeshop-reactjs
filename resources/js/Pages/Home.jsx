@@ -53,18 +53,18 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold text-navy-800 mb-4">
-              Fresh Baked <br/>
-              <span className="text-blue-500">Happiness</span>
+              Taste That <br/>
+              <span className="text-blue-500">Wows Every Sense!</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8">
-              Experience the taste of freshly baked goods made with love and premium ingredients.
+              Irresistible treats that make moments magical! Premium ingredients, exceptional flavors.
             </p>
             <motion.button
               className="bg-navy-800 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg"
               whileHover={{ scale: 1.05, backgroundColor: "#1a3a5f" }}
               whileTap={{ scale: 0.95 }}
             >
-              Explore Our Menu
+              Discover Delights Now
             </motion.button>
           </motion.div>
           
@@ -119,22 +119,22 @@ const FeaturedProducts = () => {
   const products = [
     { 
       id: 1, 
-      name: 'Classic Sourdough', 
-      description: 'Our signature sourdough with perfectly crispy crust.',
+      name: 'Premium Artisan Bread', 
+      description: 'Crispy outside, heavenly inside! Our signature bread will elevate any meal.',
       price: '₱120.00',
       image: '/images/home/sourdough.jpg'
     },
     { 
       id: 2, 
-      name: 'Chocolate Croissant', 
-      description: 'Buttery layers filled with rich chocolate.',
+      name: 'Refreshing Coolers', 
+      description: 'Beat the heat with our ice-cold signature coolers! Pure refreshment in every sip.',
       price: '₱85.00',
       image: '/images/home/croissant.jpg'
     },
     { 
       id: 3, 
-      name: 'Blueberry Muffin', 
-      description: 'Moist muffin bursting with fresh blueberries.',
+      name: 'Sizzling HotBites', 
+      description: 'Savory goodness that packs a flavor punch! Perfect for on-the-go hunger busters.',
       price: '₱75.00',
       image: '/images/home/muffin.jpg'
     },
@@ -150,10 +150,10 @@ const FeaturedProducts = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">Our Bestsellers</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">Crave-Worthy Bestsellers</h2>
           <div className="w-24 h-1 bg-blue-500 mx-auto mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover our most popular items that keep our customers coming back for more.
+            One bite and you're hooked! Our most addictive creations that keep fans coming back.
           </p>
         </motion.div>
         
@@ -185,11 +185,11 @@ const FeaturedProducts = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Reserve
+                    Reserve Now
                   </motion.button>
                 </div>
                 <p className="text-xs text-gray-500 mt-2 italic">
-                  Reservation valid for 30 mins to pickup
+                  Quick! Reserve yours for 30 mins guaranteed pickup
                 </p>
               </div>
             </motion.div>
@@ -202,7 +202,7 @@ const FeaturedProducts = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            View All Products
+            Explore All Temptations
           </motion.button>
         </div>
       </div>
@@ -215,23 +215,23 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Maria Santos',
-      role: 'Regular Customer',
-      text: 'Their bread is always fresh and delicious. The chocolate croissants are to die for!',
+      name: 'Mark Ranny Aglapay',
+      role: 'Loyal Fan',
+      text: 'Their premium bread is life-changing! And those coolers? Absolute perfection on hot days!',
       image: '/images/home/customer-maria.jpg'
     },
     {
       id: 2,
-      name: 'Juan Reyes',
-      role: 'Food Blogger',
-      text: 'Eljin BW SuperBakeshop has the best sourdough in the city. Absolutely worth a visit!',
+      name: 'Mark Ranny Aglapay',
+      role: 'Food Enthusiast',
+      text: 'SuperBakeshops hopia and cakes are unbeatable! Worth every centavo and the extra gym time',
       image: '/images/home/customer-juan.jpg'
     },
     {
       id: 3,
-      name: 'Sofia Cruz',
-      role: 'Café Owner',
-      text: 'As a café owner, I exclusively source my pastries from Eljin BW. Their quality is unmatched.',
+      name: 'Mark Ranny Aglapay',
+      role: 'Health Warrior',
+      text: 'Their Healthwise options let me indulge without guilt. Finally, treats that love me back!',
       image: '/images/home/customer-sofia.jpg'
     },
   ];
@@ -246,10 +246,10 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Taste Believers Speak</h2>
           <div className="w-24 h-1 bg-blue-400 mx-auto mb-4"></div>
           <p className="text-blue-100 max-w-2xl mx-auto">
-            We take pride in making our customers happy with every bite.
+            Don't just take our word for it - hear from our raving fans who can't get enough!
           </p>
         </motion.div>
         
@@ -314,20 +314,20 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">Our Baking Philosophy</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">Our Sweet Secret</h2>
               <div className="w-24 h-1 bg-blue-500 mb-6"></div>
               <p className="text-gray-600 mb-4">
-                At Eljin BW SuperBakeshop, we believe in using only the finest ingredients and traditional baking methods to create products that delight our customers.
+                From ice cream that makes memories to pastries that spark joy, we craft each bite with premium ingredients and an extra sprinkle of passion.
               </p>
               <p className="text-gray-600 mb-6">
-                Every item is baked fresh daily with love and attention to detail, ensuring quality and consistency in every bite.
+                Whether it's our legendary hopia or our decadent cakes, we're not just baking—we're creating moments that matter.
               </p>
               <motion.button
                 className="bg-navy-800 text-white px-6 py-3 rounded-full text-lg font-medium"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Learn More About Us
+                Discover Our Magic
               </motion.button>
             </motion.div>
             
@@ -372,7 +372,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            Ready to Experience Our Delicious Treats?
+            Your Tastebuds Are Calling. Will You Answer?
           </motion.h2>
           
           <motion.p
@@ -382,7 +382,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-blue-100 max-w-2xl mx-auto mb-8"
           >
-            Visit our bakeshop today or order online for pickup and delivery.
+            Skip the ordinary! Visit SuperBakeshop today or order online for a flavor revolution.
           </motion.p>
           
           <motion.div
@@ -397,7 +397,7 @@ const Home = () => {
               whileHover={{ scale: 1.05, backgroundColor: "#f0f9ff" }}
               whileTap={{ scale: 0.95 }}
             >
-              Find Our Location
+              Find Flavor HQ
             </motion.button>
             
             <motion.button
@@ -405,7 +405,7 @@ const Home = () => {
               whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
               whileTap={{ scale: 0.95 }}
             >
-              Order Online
+              Order Happiness
             </motion.button>
           </motion.div>
         </div>
