@@ -7,15 +7,41 @@ const Hero = () => {
     <div className="relative h-screen flex items-center bg-gradient-to-b from-blue-50 to-blue-100">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          {/* Bakery pattern SVG */}
+          {/* Background pattern */}
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-            <pattern id="bakeryPattern" patternUnits="userSpaceOnUse" width="20" height="20">
-              <path d="M0,10 Q5,0 10,10 T20,10" fill="none" stroke="#1E40AF" strokeWidth="0.5"/>
-              <circle cx="5" cy="5" r="1" fill="#1E40AF"/>
-              <circle cx="15" cy="15" r="1" fill="#1E40AF"/>
+        <defs>
+            <pattern id="bakeryPattern" patternUnits="userSpaceOnUse" width="50" height="50">
+            {/* Bread outline */}
+            <path d="M10,25 Q25,15 40,25" fill="none" stroke="#1E40AF" strokeWidth="0.5"/>
+            
+            {/* Croissant shape */}
+            <path d="M5,40 Q10,30 15,35 T25,40" fill="none" stroke="#1E40AF" strokeWidth="0.5"/>
+            
+            {/* Wheat stalk */}
+            <path d="M35,10 L35,20" stroke="#1E40AF" strokeWidth="0.5"/>
+            <path d="M33,12 L35,10" stroke="#1E40AF" strokeWidth="0.5"/>
+            <path d="M37,12 L35,10" stroke="#1E40AF" strokeWidth="0.5"/>
+            <path d="M33,15 L35,13" stroke="#1E40AF" strokeWidth="0.5"/>
+            <path d="M37,15 L35,13" stroke="#1E40AF" strokeWidth="0.5"/>
+            <path d="M33,18 L35,16" stroke="#1E40AF" strokeWidth="0.5"/>
+            <path d="M37,18 L35,16" stroke="#1E40AF" strokeWidth="0.5"/>
+            
+            {/* Rolling pin */}
+            <rect x="40" y="35" width="8" height="2" rx="1" stroke="#1E40AF" strokeWidth="0.5" fill="none"/>
+            <line x1="42" y1="33" x2="42" y2="39" stroke="#1E40AF" strokeWidth="0.5"/>
+            <line x1="46" y1="33" x2="46" y2="39" stroke="#1E40AF" strokeWidth="0.5"/>
+            
+            {/* Small flour dusting dots */}
+            <circle cx="10" cy="10" r="0.8" fill="#1E40AF" opacity="0.5"/>
+            <circle cx="15" cy="5" r="0.6" fill="#1E40AF" opacity="0.5"/>
+            <circle cx="25" cy="15" r="0.7" fill="#1E40AF" opacity="0.5"/>
+            <circle cx="40" cy="5" r="0.5" fill="#1E40AF" opacity="0.5"/>
+            <circle cx="45" cy="45" r="0.6" fill="#1E40AF" opacity="0.5"/>
+            <circle cx="5" cy="45" r="0.7" fill="#1E40AF" opacity="0.5"/>
             </pattern>
-            <rect width="100%" height="100%" fill="url(#bakeryPattern)" />
-          </svg>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#bakeryPattern)" />
+        </svg>
         </div>
       </div>
       
@@ -48,44 +74,14 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            {/* Hero Bread SVG */}
-            <svg 
-              viewBox="0 0 300 200" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="rounded-lg shadow-xl mx-auto"
-            >
-              <defs>
-                <radialGradient id="breadGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                  <stop offset="0%" stopColor="#E9D8A6" />
-                  <stop offset="80%" stopColor="#CA8A04" />
-                  <stop offset="100%" stopColor="#854D0E" />
-                </radialGradient>
-                <filter id="breadShadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="3" dy="3" stdDeviation="5" floodColor="#00000033" />
-                </filter>
-              </defs>
-              
-              {/* Bread */}
-              <ellipse cx="150" cy="100" rx="120" ry="70" fill="url(#breadGradient)" filter="url(#breadShadow)" />
-              
-              {/* Bread Cuts */}
-              <path d="M90,70 Q150,110 210,70" fill="none" stroke="#92400E" strokeWidth="2" />
-              <path d="M80,100 Q150,140 220,100" fill="none" stroke="#92400E" strokeWidth="2" />
-              
-              {/* Bread Texture */}
-              <circle cx="110" cy="85" r="3" fill="#92400E" opacity="0.7" />
-              <circle cx="130" cy="110" r="2" fill="#92400E" opacity="0.7" />
-              <circle cx="170" cy="90" r="2" fill="#92400E" opacity="0.7" />
-              <circle cx="190" cy="105" r="3" fill="#92400E" opacity="0.7" />
-              
-              {/* Flour dusting */}
-              <circle cx="160" cy="65" r="4" fill="white" opacity="0.8" />
-              <circle cx="120" cy="60" r="3" fill="white" opacity="0.8" />
-              <circle cx="180" cy="75" r="2" fill="white" opacity="0.8" />
-              <circle cx="100" cy="80" r="2" fill="white" opacity="0.8" />
-            </svg>
+            {/* Hero Image - replacing SVG */}
+            <img 
+              src="/images/home/sourdough.jpg" 
+              alt="Fresh baked bread" 
+              className="rounded-lg shadow-xl mx-auto object-cover"
+            />
             
-            {/* Floating decorative elements */}
+            {/* Decorative elements */}
             <motion.div
               className="absolute -top-10 -right-5 w-20 h-20 bg-yellow-200 rounded-full opacity-70"
               animate={{ 
@@ -126,112 +122,23 @@ const FeaturedProducts = () => {
       name: 'Classic Sourdough', 
       description: 'Our signature sourdough with perfectly crispy crust.',
       price: '₱120.00',
-      color: '#F59E0B'
+      image: '/images/home/sourdough.jpg'
     },
     { 
       id: 2, 
       name: 'Chocolate Croissant', 
       description: 'Buttery layers filled with rich chocolate.',
       price: '₱85.00',
-      color: '#78350F'
+      image: '/images/home/croissant.jpg'
     },
     { 
       id: 3, 
       name: 'Blueberry Muffin', 
       description: 'Moist muffin bursting with fresh blueberries.',
       price: '₱75.00',
-      color: '#6366F1'
+      image: '/images/home/muffin.jpg'
     },
   ];
-  
-  // SVG components for products
-  const ProductSVG = ({ id, color }) => {
-    if (id === 1) {
-      return (
-        <svg viewBox="0 0 200 150" className="w-full h-full object-cover">
-          <defs>
-            <radialGradient id="sourdoughGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop offset="0%" stopColor="#F5F3EE" />
-              <stop offset="60%" stopColor="#E9D8A6" />
-              <stop offset="100%" stopColor="#D69E2E" />
-            </radialGradient>
-          </defs>
-          <ellipse cx="100" cy="75" rx="80" ry="50" fill="url(#sourdoughGradient)" />
-          <path d="M50,75 Q100,105 150,75" fill="none" stroke="#92400E" strokeWidth="1.5" />
-          <path d="M60,55 Q100,85 140,55" fill="none" stroke="#92400E" strokeWidth="1.5" />
-          <circle cx="80" cy="60" r="3" fill="#92400E" opacity="0.6" />
-          <circle cx="120" cy="65" r="2" fill="#92400E" opacity="0.6" />
-          <circle cx="90" cy="85" r="2" fill="#92400E" opacity="0.6" />
-          <circle cx="110" cy="80" r="2" fill="#92400E" opacity="0.6" />
-          <circle cx="70" cy="75" r="1" fill="white" opacity="0.7" />
-          <circle cx="130" cy="70" r="1" fill="white" opacity="0.7" />
-        </svg>
-      );
-    } else if (id === 2) {
-      return (
-        <svg viewBox="0 0 200 150" className="w-full h-full object-cover">
-          <defs>
-            <linearGradient id="croissantGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#F5DEB3" />
-              <stop offset="100%" stopColor="#D4A76A" />
-            </linearGradient>
-            <linearGradient id="chocolateGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#7B3F00" />
-              <stop offset="100%" stopColor="#3C1F00" />
-            </linearGradient>
-          </defs>
-          
-          {/* Croissant shape */}
-          <path d="M30,100 Q60,20 120,40 T170,70 Q130,110 100,120 T30,100 Z" fill="url(#croissantGradient)" />
-          
-          {/* Chocolate filling showing */}
-          <path d="M65,70 Q90,60 110,80 T140,85" fill="none" stroke="url(#chocolateGradient)" strokeWidth="6" />
-          
-          {/* Croissant layers */}
-          <path d="M40,90 Q70,30 120,50" fill="none" stroke="#D4A76A" strokeWidth="1.5" />
-          <path d="M70,110 Q100,40 150,65" fill="none" stroke="#D4A76A" strokeWidth="1.5" />
-          
-          {/* Butter shine */}
-          <ellipse cx="60" cy="60" rx="10" ry="5" fill="white" opacity="0.3" transform="rotate(-30, 60, 60)" />
-          <ellipse cx="120" cy="70" rx="15" ry="5" fill="white" opacity="0.3" transform="rotate(20, 120, 70)" />
-        </svg>
-      );
-    } else if (id === 3) {
-      return (
-        <svg viewBox="0 0 200 150" className="w-full h-full object-cover">
-          <defs>
-            <linearGradient id="muffinGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#E5DBCF" />
-              <stop offset="100%" stopColor="#C8A887" />
-            </linearGradient>
-          </defs>
-          
-          {/* Muffin wrapper */}
-          <path d="M60,100 L60,70 Q100,40 140,70 L140,100 Z" fill="#F87171" opacity="0.7" />
-          
-          {/* Muffin top */}
-          <ellipse cx="100" cy="70" rx="40" ry="25" fill="url(#muffinGradient)" />
-          
-          {/* Blueberries */}
-          <circle cx="85" cy="65" r="4" fill="#3730A3" />
-          <circle cx="110" cy="60" r="3" fill="#3730A3" />
-          <circle cx="115" cy="75" r="4" fill="#3730A3" />
-          <circle cx="95" cy="75" r="3" fill="#3730A3" />
-          <circle cx="75" cy="70" r="3" fill="#3730A3" />
-          <circle cx="90" cy="55" r="3" fill="#3730A3" />
-          <circle cx="105" cy="70" r="2" fill="#3730A3" />
-          
-          {/* Sugar sprinkles */}
-          <circle cx="82" cy="60" r="1" fill="white" />
-          <circle cx="95" cy="58" r="1" fill="white" />
-          <circle cx="112" cy="65" r="1" fill="white" />
-          <circle cx="120" cy="73" r="1" fill="white" />
-          <circle cx="88" cy="73" r="1" fill="white" />
-        </svg>
-      );
-    }
-    return null;
-  };
   
   return (
     <section className="py-16 bg-white">
@@ -261,7 +168,11 @@ const FeaturedProducts = () => {
               className="bg-blue-50 rounded-2xl overflow-hidden shadow-lg"
             >
               <div className="h-48 overflow-hidden">
-                <ProductSVG id={product.id} color={product.color} />
+                <img 
+                  src={product.image} 
+                  alt={product.name}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
               </div>
               
               <div className="p-6">
@@ -307,44 +218,23 @@ const Testimonials = () => {
       name: 'Maria Santos',
       role: 'Regular Customer',
       text: 'Their bread is always fresh and delicious. The chocolate croissants are to die for!',
-      avatar: { bg: '#FEF3C7', fg: '#D97706', initial: 'MS' }
+      image: '/images/home/customer-maria.jpg'
     },
     {
       id: 2,
       name: 'Juan Reyes',
       role: 'Food Blogger',
       text: 'Eljin BW SuperBakeshop has the best sourdough in the city. Absolutely worth a visit!',
-      avatar: { bg: '#DBEAFE', fg: '#2563EB', initial: 'JR' }
+      image: '/images/home/customer-juan.jpg'
     },
     {
       id: 3,
       name: 'Sofia Cruz',
       role: 'Café Owner',
       text: 'As a café owner, I exclusively source my pastries from Eljin BW. Their quality is unmatched.',
-      avatar: { bg: '#FCE7F3', fg: '#DB2777', initial: 'SC' }
+      image: '/images/home/customer-sofia.jpg'
     },
   ];
-  
-  // SVG Avatar Component
-  const AvatarSVG = ({ avatar }) => {
-    return (
-      <svg viewBox="0 0 40 40" className="w-16 h-16 rounded-full border-2 border-blue-400">
-        <circle cx="20" cy="20" r="20" fill={avatar.bg} />
-        <text
-          x="20"
-          y="20"
-          textAnchor="middle"
-          dominantBaseline="central"
-          fill={avatar.fg}
-          fontSize="16"
-          fontWeight="bold"
-          fontFamily="Arial, sans-serif"
-        >
-          {avatar.initial}
-        </text>
-      </svg>
-    );
-  };
   
   return (
     <section className="py-16 bg-navy-800 text-white">
@@ -374,7 +264,11 @@ const Testimonials = () => {
               className="bg-navy-700 rounded-2xl p-6 shadow-lg"
             >
               <div className="flex items-center mb-4">
-                <AvatarSVG avatar={testimonial.avatar} />
+                <img 
+                  src={testimonial.image} 
+                  alt={testimonial.name}
+                  className="w-16 h-16 rounded-full border-2 border-blue-400 object-cover"
+                />
                 <div className="ml-4">
                   <h3 className="font-bold text-lg">{testimonial.name}</h3>
                   <p className="text-blue-300 text-sm">{testimonial.role}</p>
@@ -395,69 +289,6 @@ const Testimonials = () => {
         </div>
       </div>
     </section>
-  );
-};
-
-// Baking Process SVG for Philosophy Section
-const BakingProcessSVG = () => {
-  return (
-    <svg viewBox="0 0 400 300" className="rounded-lg shadow-xl w-full">
-      <defs>
-        <linearGradient id="bakeryBg" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#F9FAFB" />
-          <stop offset="100%" stopColor="#E5E7EB" />
-        </linearGradient>
-        <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
-          <feDropShadow dx="2" dy="2" stdDeviation="3" floodColor="#00000033" />
-        </filter>
-      </defs>
-      
-      {/* Background */}
-      <rect width="400" height="300" fill="url(#bakeryBg)" rx="10" />
-      
-      {/* Baker */}
-      <circle cx="130" cy="120" r="30" fill="#F5F5F4" /> {/* Head */}
-      <path d="M130,150 L130,200" stroke="#1E3A8A" strokeWidth="8" /> {/* Body */}
-      <path d="M130,160 L100,190" stroke="#1E3A8A" strokeWidth="6" /> {/* Left arm */}
-      <path d="M130,160 L160,190" stroke="#1E3A8A" strokeWidth="6" /> {/* Right arm */}
-      <path d="M130,200 L110,240" stroke="#1E3A8A" strokeWidth="6" /> {/* Left leg */}
-      <path d="M130,200 L150,240" stroke="#1E3A8A" strokeWidth="6" /> {/* Right leg */}
-      
-      {/* Baker's hat */}
-      <rect x="105" y="80" width="50" height="20" fill="white" rx="5" />
-      <rect x="110" y="60" width="40" height="25" fill="white" rx="10" />
-      
-      {/* Face */}
-      <circle cx="120" cy="115" r="3" fill="#1F2937" /> {/* Left eye */}
-      <circle cx="140" cy="115" r="3" fill="#1F2937" /> {/* Right eye */}
-      <path d="M123,130 Q130,135 137,130" fill="none" stroke="#1F2937" strokeWidth="2" /> {/* Smile */}
-      
-      {/* Oven */}
-      <rect x="220" y="150" width="120" height="100" fill="#6B7280" rx="5" filter="url(#softShadow)" />
-      <rect x="230" y="180" width="100" height="60" fill="#1F2937" rx="3" /> {/* Oven window */}
-      <rect x="275" y="160" width="10" height="10" fill="#EF4444" rx="5" /> {/* Oven light */}
-      
-      {/* Bread in oven */}
-      <ellipse cx="280" cy="210" rx="30" ry="15" fill="#F59E0B" />
-      
-      {/* Bowl */}
-      <ellipse cx="230" cy="120" rx="40" ry="15" fill="#E5E7EB" />
-      <path d="M190,120 Q230,150 270,120" fill="none" stroke="#E5E7EB" strokeWidth="30" />
-      
-      {/* Flour cloud */}
-      <circle cx="280" cy="100" r="30" fill="white" opacity="0.6" />
-      <circle cx="290" cy="80" r="20" fill="white" opacity="0.6" />
-      <circle cx="260" cy="80" r="15" fill="white" opacity="0.6" />
-      
-      {/* Rolling pin */}
-      <rect x="280" y="130" width="80" height="10" fill="#92400E" rx="5" />
-      <rect x="275" y="125" width="5" height="20" fill="#92400E" rx="2" />
-      <rect x="360" y="125" width="5" height="20" fill="#92400E" rx="2" />
-      
-      {/* Bread on counter */}
-      <ellipse cx="350" cy="240" rx="25" ry="15" fill="#F59E0B" />
-      <path d="M340,235 Q350,245 360,235" fill="none" stroke="#92400E" strokeWidth="1.5" />
-    </svg>
   );
 };
 
@@ -507,7 +338,12 @@ const Home = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <BakingProcessSVG />
+              {/* Baking Process Image - replacing SVG */}
+              <img 
+                src="/images/home/baking-process.jpg" 
+                alt="Our baking process" 
+                className="rounded-lg shadow-xl w-full"
+              />
               
               {/* Decorative elements */}
               <motion.div
