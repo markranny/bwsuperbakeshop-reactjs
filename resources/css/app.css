@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Font */
+html, body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Additional custom styles */
+.bg-bakery-pattern {
+  background-image: url('/images/bakery-pattern.png');
+  background-repeat: repeat;
+  background-size: 300px;
+  opacity: 0.1;
+}
+
+/* Custom Animation Classes */
+.bakery-bounce {
+  animation: bakeryBounce 2s infinite;
+}
+
+@keyframes bakeryBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bakery-float {
+  animation: bakeryFloat 3s ease-in-out infinite;
+}
+
+@keyframes bakeryFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0f2b4a;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a3a5f;
+}
+
+/* Custom focus styles */
+*:focus {
+  outline: none;
+}
+
+button:focus, a:focus, input:focus, textarea:focus {
+  @apply ring-2 ring-blue-400 ring-offset-2;
+}
+
+/* Custom form styles */
+input, textarea, select {
+  @apply transition-all duration-200;
+}
+
+/* Button hover effect */
+.btn-hover-effect {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.btn-hover-effect:after {
+  content: '';
+  @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+}
+
+.btn-hover-effect:hover:after {
+  @apply opacity-20;
+}
+
+/* Extra space for circular navigation */
+.page-with-nav {
+  @apply pb-24;
+}
+
+/* Ensure footer stays at bottom */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+/* Hide scrollbar for carousel */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom styles for product cards */
+.product-card {
+  @apply transition-all duration-300;
+}
+
+.product-card:hover {
+  @apply transform -translate-y-2 shadow-xl;
+}
+
+/* Toast notification styles */
+.toast {
+  @apply fixed right-4 bottom-4 bg-white shadow-lg rounded-lg overflow-hidden max-w-md z-50;
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.toast-success {
+  @apply border-l-4 border-green-500;
+}
+
+.toast-error {
+  @apply border-l-4 border-red-500;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Radial menu pulse effect */
+.pulse-ring {
+  @apply absolute inset-0 rounded-full;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
