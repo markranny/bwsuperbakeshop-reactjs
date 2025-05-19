@@ -2,114 +2,54 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 // Hero Section Component
+// Hero Section Component
 const Hero = () => {
   return (
-    <div className="relative h-screen flex items-center bg-gradient-to-b from-blue-50 to-blue-100">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          {/* Background pattern */}
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        <defs>
-            <pattern id="bakeryPattern" patternUnits="userSpaceOnUse" width="50" height="50">
-            {/* Bread outline */}
-            <path d="M10,25 Q25,15 40,25" fill="none" stroke="#1E40AF" strokeWidth="0.5"/>
-            
-            {/* Croissant shape */}
-            <path d="M5,40 Q10,30 15,35 T25,40" fill="none" stroke="#1E40AF" strokeWidth="0.5"/>
-            
-            {/* Wheat stalk */}
-            <path d="M35,10 L35,20" stroke="#1E40AF" strokeWidth="0.5"/>
-            <path d="M33,12 L35,10" stroke="#1E40AF" strokeWidth="0.5"/>
-            <path d="M37,12 L35,10" stroke="#1E40AF" strokeWidth="0.5"/>
-            <path d="M33,15 L35,13" stroke="#1E40AF" strokeWidth="0.5"/>
-            <path d="M37,15 L35,13" stroke="#1E40AF" strokeWidth="0.5"/>
-            <path d="M33,18 L35,16" stroke="#1E40AF" strokeWidth="0.5"/>
-            <path d="M37,18 L35,16" stroke="#1E40AF" strokeWidth="0.5"/>
-            
-            {/* Rolling pin */}
-            <rect x="40" y="35" width="8" height="2" rx="1" stroke="#1E40AF" strokeWidth="0.5" fill="none"/>
-            <line x1="42" y1="33" x2="42" y2="39" stroke="#1E40AF" strokeWidth="0.5"/>
-            <line x1="46" y1="33" x2="46" y2="39" stroke="#1E40AF" strokeWidth="0.5"/>
-            
-            {/* Small flour dusting dots */}
-            <circle cx="10" cy="10" r="0.8" fill="#1E40AF" opacity="0.5"/>
-            <circle cx="15" cy="5" r="0.6" fill="#1E40AF" opacity="0.5"/>
-            <circle cx="25" cy="15" r="0.7" fill="#1E40AF" opacity="0.5"/>
-            <circle cx="40" cy="5" r="0.5" fill="#1E40AF" opacity="0.5"/>
-            <circle cx="45" cy="45" r="0.6" fill="#1E40AF" opacity="0.5"/>
-            <circle cx="5" cy="45" r="0.7" fill="#1E40AF" opacity="0.5"/>
-            </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#bakeryPattern)" />
-        </svg>
-        </div>
+    <div className="relative h-screen w-full">
+      {/* Desktop/Landscape Image (hidden on small screens) */}
+      <div className="hidden md:block absolute inset-0">
+        <img 
+          src="/images/home/banner-landscape.jpg" 
+          alt="SuperBakeshop banner" 
+          className="w-full h-full object-fill"
+        />
       </div>
       
-      <div className="container mx-auto px-4 z-10">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-4xl md:text-6xl font-bold text-navy-800 mb-4">
-              Taste That <br/>
-              <span className="text-blue-500">Wows Every Sense!</span>
-            </h1>
-            <p className="text-lg text-gray-600 mb-8">
-              Irresistible treats that make moments magical! Premium ingredients, exceptional flavors.
-            </p>
-            <motion.button
-              className="bg-navy-800 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg"
-              whileHover={{ scale: 1.05, backgroundColor: "#1a3a5f" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Discover Delights Now
-            </motion.button>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            {/* Hero Image - replacing SVG */}
-            <img 
-              src="/images/home/sourdough.jpg" 
-              alt="Fresh baked bread" 
-              className="rounded-lg shadow-xl mx-auto object-cover"
-            />
-            
-            {/* Decorative elements */}
-            <motion.div
-              className="absolute -top-10 -right-5 w-20 h-20 bg-yellow-200 rounded-full opacity-70"
-              animate={{ 
-                y: [0, -15, 0],
-                rotate: [0, 5, 0]
-              }}
-              transition={{ 
-                duration: 4,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
-            />
-            
-            <motion.div
-              className="absolute -bottom-8 -left-8 w-16 h-16 bg-blue-200 rounded-full opacity-60"
-              animate={{ 
-                y: [0, 10, 0],
-                x: [0, 5, 0]
-              }}
-              transition={{ 
-                duration: 5,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
-            />
-          </motion.div>
-        </div>
+      {/* Mobile/Portrait Image (visible only on small screens) */}
+      <div className="md:hidden absolute">
+        <img 
+          src="/images/home/banner-portrait.jpg" 
+          alt="SuperBakeshop banner" 
+          className="w-full h-full object-fill"
+        />
       </div>
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-0"></div>
+      
+      {/* <div className="container mx-auto px-4 z-10 relative h-full flex items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-xl"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            Taste That <br/>
+            <span className="text-blue-300">Wows Every Sense!</span>
+          </h1>
+          <p className="text-lg text-gray-100 mb-8">
+            Irresistible treats that make moments magical! Premium ingredients, exceptional flavors.
+          </p>
+          <motion.button
+            className="bg-blue-500 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg"
+            whileHover={{ scale: 1.05, backgroundColor: "#3b82f6" }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Discover Delights Now
+          </motion.button>
+        </motion.div>
+      </div> */}
     </div>
   );
 };

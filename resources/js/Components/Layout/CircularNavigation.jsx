@@ -35,7 +35,7 @@ const CircularNavigation = () => {
       <div className="relative">
         {/* Menu button */}
         <motion.button
-          className="w-16 h-16 bg-navy-800 rounded-full text-white flex items-center justify-center shadow-lg cursor-pointer font-bold z-20"
+          className="w-14 h-20 bg-navy-800 rounded-full text-white flex items-center justify-center shadow-lg cursor-pointer font-bold z-20"
           whileTap={{ scale: 0.95 }}
           onClick={toggleMenu}
         >
